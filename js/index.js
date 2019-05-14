@@ -5,6 +5,7 @@ const headerImage = document.querySelector('.intro img');
 const introH2 = document.querySelector('.intro h2');
 
 const allH2 = document.querySelectorAll('h2');
+const allParagraphs = document.querySelectorAll('p');
 
 // Content pick selectors
 const contentPick = document.querySelectorAll('.content-pick')
@@ -33,6 +34,11 @@ logoHeading.addEventListener('mouseout', (event) => {
 // On window load, change color of all h2 heading to random colors
 window.addEventListener('load', () => {
   allH2.forEach(element => element.setAttribute('style', `color: ${'#'+(Math.random()*0xFFFFFF<<0).toString(16)}`))
+})
+
+// On window keydown, change color of all h2 heading to random colors
+window.addEventListener('keydown', () => {
+  allParagraphs.forEach(element => element.setAttribute('style', `color: ${'#'+(Math.random()*0xFFFFFF<<0).toString(16)}`))
 })
 
 // Set color of navItems to random color on mouseover event

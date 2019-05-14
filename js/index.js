@@ -1,6 +1,7 @@
 // Your code goes here
 const logoHeading = document.querySelector('.logo-heading');
 const navItems = document.querySelectorAll('nav a');
+const headerImage = document.querySelector('.intro img');
 
 // Content pick selectors
 const contentPick = document.querySelectorAll('.content-pick')
@@ -32,3 +33,9 @@ funInSunBtn.addEventListener('click', (event) => {
 //     alert(`Confirm sign up for ${event.path[1].children[0].innerText} expedition`);
 //   })
 // })
+
+// If header image is dragged, make it opaque
+headerImage.addEventListener('drag', event => {
+  // event.target.style.content = "Move me not"; // Not working yet
+  event.target.style.opacity = .3;
+})

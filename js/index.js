@@ -9,6 +9,7 @@ const allParagraphs = document.querySelectorAll('p');
 
 // Content pick selectors
 const contentPick = document.querySelectorAll('.content-pick')
+const lastContentPick = contentPick[0].children[2];
 const funInSunBtn = contentPick[0].children[0].children[2]
 const mountainBtn = contentPick[0].children[1].children[2]
 const islandBtn = contentPick[0].children[2].children[2]
@@ -75,3 +76,10 @@ funInSunBtn.addEventListener('click', (event) => {
 
 // On wheel over button, change text
 mountainBtn.addEventListener('wheel', event => event.target.innerText = "Continue!");
+
+// Nest two similar events somewhere in the site and prevent the event propagation properly
+lastContentPick.addEventListener('click', event => alert('Show me too!'))
+islandBtn.addEventListener('click', event => {
+  event.stopPropagation();
+  alert('Yikes!')
+})

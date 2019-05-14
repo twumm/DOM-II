@@ -28,6 +28,15 @@ navItems.forEach(element => {
   element.addEventListener('mouseover', event => {
     event.target.style = `color: ${'#'+(Math.random()*0xFFFFFF<<0).toString(16)}`
   })
+  element.addEventListener('click', event => {
+    event.preventDefault();
+  })
+})
+
+// If header image is dragged, make it opaque
+headerImage.addEventListener('drag', event => {
+  // event.target.style.content = "Move me not"; // Not working yet
+  event.target.style.opacity = .3;
 })
 
 // Alert user confirmation when they click to sign up for fun in the sun trip
@@ -41,10 +50,3 @@ funInSunBtn.addEventListener('click', (event) => {
 //     alert(`Confirm sign up for ${event.path[1].children[0].innerText} expedition`);
 //   })
 // })
-
-// If header image is dragged, make it opaque
-headerImage.addEventListener('drag', event => {
-  // event.target.style.content = "Move me not"; // Not working yet
-  event.target.style.opacity = .3;
-})
-

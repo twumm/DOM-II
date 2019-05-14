@@ -10,6 +10,11 @@ const funInSunBtn = contentPick[0].children[0].children[2]
 const mountainBtn = contentPick[0].children[1].children[2]
 const islandBtn = contentPick[0].children[2].children[2]
 
+// Alert to user that mobile support not availble on resize event
+window.addEventListener('resize', () => {
+  alert("Stop resizing friend! I'm not mobile friendly!")
+});
+
 // Add event listener to flip logo when user clicks on the logo
 logoHeading.addEventListener('click', (event) => {
   // console.log(event)

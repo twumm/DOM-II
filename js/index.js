@@ -23,6 +23,12 @@ logoHeading.addEventListener('mouseout', (event) => {
 
 // Alert user confirmation when they click to sign up for fun in the sun trip
 funInSunBtn.addEventListener('click', (event) => {
-  console.log(event)
   alert(`Confirm sign up for ${event.path[1].children[0].innerText} expedition`);
 })
+
+// -------Try this again after MVP
+// contentPick[0].forEach((element, index) => {
+//   element.children[index].children[2].addEventListener('click', (event) => {
+//     alert(`Confirm sign up for ${event.path[1].children[0].innerText} expedition`);
+//   })
+// })

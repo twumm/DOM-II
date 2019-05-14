@@ -72,3 +72,6 @@ funInSunBtn.addEventListener('click', (event) => {
 //     alert(`Confirm sign up for ${event.path[1].children[0].innerText} expedition`);
 //   })
 // })
+
+// On wheel over button, change text
+mountainBtn.addEventListener('wheel', event => event.target.innerText = "Continue!");

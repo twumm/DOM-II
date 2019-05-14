@@ -22,6 +22,14 @@ logoHeading.addEventListener('mouseout', (event) => {
   '-o-transform: ""; -ms-transform: ""; transform: "";';
 })
 
+// Set color of navItems to random color on mouseover event
+navItems.forEach(element => {
+  // console.log(element)
+  element.addEventListener('mouseover', event => {
+    event.target.style = `color: ${'#'+(Math.random()*0xFFFFFF<<0).toString(16)}`
+  })
+})
+
 // Alert user confirmation when they click to sign up for fun in the sun trip
 funInSunBtn.addEventListener('click', (event) => {
   alert(`Confirm sign up for ${event.path[1].children[0].innerText} expedition`);
@@ -39,3 +47,4 @@ headerImage.addEventListener('drag', event => {
   // event.target.style.content = "Move me not"; // Not working yet
   event.target.style.opacity = .3;
 })
+

@@ -4,6 +4,8 @@ const navItems = document.querySelectorAll('nav a');
 const headerImage = document.querySelector('.intro img');
 const introH2 = document.querySelector('.intro h2');
 
+const allH2 = document.querySelectorAll('h2');
+
 // Content pick selectors
 const contentPick = document.querySelectorAll('.content-pick')
 const funInSunBtn = contentPick[0].children[0].children[2]
@@ -12,7 +14,7 @@ const islandBtn = contentPick[0].children[2].children[2]
 
 // Alert to user that mobile support not availble on resize event
 window.addEventListener('resize', () => {
-  alert("Stop resizing friend! I'm not mobile friendly!")
+  alert("Stop resizing friend! I'm not mobile friendly!");
 });
 
 // Add event listener to flip logo when user clicks on the logo
@@ -26,6 +28,11 @@ logoHeading.addEventListener('click', (event) => {
 logoHeading.addEventListener('mouseout', (event) => {
   event.target.style = '-moz-transform: ""; -webkit-transform: "";' +
   '-o-transform: ""; -ms-transform: ""; transform: "";';
+})
+
+// On window load, change color of all h2 heading to random colors
+window.addEventListener('load', () => {
+  allH2.forEach(element => element.setAttribute('style', `color: ${'#'+(Math.random()*0xFFFFFF<<0).toString(16)}`))
 })
 
 // Set color of navItems to random color on mouseover event

@@ -2,6 +2,7 @@
 const logoHeading = document.querySelector('.logo-heading');
 const navItems = document.querySelectorAll('nav a');
 const headerImage = document.querySelector('.intro img');
+const introH2 = document.querySelector('.intro h2');
 
 // Content pick selectors
 const contentPick = document.querySelectorAll('.content-pick')
@@ -38,6 +39,9 @@ headerImage.addEventListener('drag', event => {
   // event.target.style.content = "Move me not"; // Not working yet
   event.target.style.opacity = .3;
 })
+
+// Add extra text when user double clicks on Welcome text
+introH2.addEventListener('dblclick', event => event.target.innerText += " Have Fun!!")
 
 // Alert user confirmation when they click to sign up for fun in the sun trip
 funInSunBtn.addEventListener('click', (event) => {

@@ -48,6 +48,7 @@ navItems.forEach(element => {
   element.addEventListener('mouseover', event => {
     event.target.style = `color: ${'#'+(Math.random()*0xFFFFFF<<0).toString(16)}`
   })
+  // Stop the navigation from items from refreshing the page by using preventDefault()
   element.addEventListener('click', event => {
     event.preventDefault();
   })
